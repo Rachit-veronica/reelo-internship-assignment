@@ -1,0 +1,25 @@
+.tablePageOutterBody {
+  margin-top: 5%;
+  .tablePageInnerBody {
+    max-width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+    table {
+      width: 100%;
+      height: auto;
+
+      .tableTitle {
+        th{
+          padding: 1% 0% 0% 0%;
+        }
+      }
+      tr {
+        height: 50px;
+        th {
+          border: 1px solid black;
+          font-size: 18px;
+        }
+      }
+    }
+  }
+}
