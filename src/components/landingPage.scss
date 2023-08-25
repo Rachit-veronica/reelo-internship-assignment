@@ -6,31 +6,94 @@
 
 .landingPageOutterBody {
   width: 100%;
-  height: auto;
+  height: 100vh;
+  background-image: url(https://marketplace.canva.com/EAFTQEWI-Ko/1/0/1600w/canva-black-sky-galaxy-stars-desktop-wallpaper-iWMZ0xN6KXs.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
   .landingPageInnerBody {
     max-width: 80%;
     margin-left: 10%;
     margin-right: 10%;
-    .filterBar {
+    padding: 2% 0% 0% 0%;
+    text-align: center;
+    color: white;
+    @media (max-width: "860px") {
       padding: 10% 0% 0% 0%;
-      display: flex;
-      justify-content: space-around;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      select {
-        width: 100%;
-        height: 40px;
-        font-size: 16px;
-        option {
-          padding: 10px; /* Adjust the padding to control the height */
-          font-size: 16px;
-          height: 30px;
+    }
+    h1 {
+      font-family: "Bricolage Grotesque", sans-serif;
+      font-family: "DM Sans", sans-serif;
+    }
+    .filterBarAndTablePage {
+      margin-top: 2%;
+      // box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 10px;
+      height: 550px;
+      background-color: white;
+      overflow-y: auto;
+      .filterBar {
+        padding: 2% 1% 2% 1%;
+        display: flex;
+        justify-content: space-around;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .hostName {
+          @media (max-width: 1450px) {
+            margin-top: 5%;
+          }
         }
-      }
-      button {
-        width: 100px;
-        font-size: medium;
-        cursor: pointer;
+        .discoveryFacility {
+          @media (max-width: 1450px) {
+            margin-top: 5%;
+          }
+        }
+        .discoveryYear {
+          @media (max-width: 1450px) {
+            margin-top: 5%;
+          }
+        }
+        .discoveryMethod {
+          @media (max-width: 1450px) {
+            margin-top: 5%;
+          }
+        }
+        select {
+          width: 100%;
+          height: 40px;
+          font-size: 16px;
+          margin-top: 0%;
+
+          option {
+            padding: 10px; /* Adjust the padding to control the height */
+            font-size: 16px;
+            height: 30px;
+          }
+        }
+        span {
+          display: flex;
+          align-items: center;
+          button {
+            background-color: #3b5895;
+            color: white;
+            border-radius: 10px;
+            width: 70px;
+            height: 40px;
+            font-size: medium;
+            cursor: pointer;
+            margin: 0px 5px 0px 5px;
+            border: none;
+            font-size: medium;
+            @media (max-width: 1450px) {
+              margin-top: 5%;
+            }
+            &:hover {
+              color: #3b5895;
+              background-color: white;
+              // border:2px solid black;
+              box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.1);
+            }
+          }
+        }
       }
     }
   }

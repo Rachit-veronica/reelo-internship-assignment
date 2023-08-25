@@ -4,23 +4,18 @@ import ArrowDropUpIcon from "@mui/icons-material/ArrowDropUp";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
 import "./tablePage.scss";
 
-const TablePage = ({ array, ascending, descending }) => {
-  const hello = array;
-  const [jsonData, setJsonData] = useState(hello);
-
-  useEffect(() => {
-    setJsonData(hello);
-  }, []);
-
-  const sortDataAscending = () => {
-    // const sortedData = [...array].sort((a, b) => a.disc_year - b.disc_year);
-    // setJsonData(sortedData);
-    ascending(true);
+const TablePage = ({
+  array,
+  numAscending,
+  numDescending,
+  textAscending,
+  textDescending,
+}) => {
+  const sortTextDataAscending = (name) => {
+    textAscending(name);
   };
-  const sortDataDescending = () => {
-    // const sortedData = [...array].sort((a, b) => b.disc_year - a.disc_year);
-    // setJsonData(sortedData);
-    descending(true);
+  const sortTextDataDescending = (name) => {
+    textDescending(name);
   };
   if (array.length > 0) {
     return (
@@ -34,9 +29,15 @@ const TablePage = ({ array, ascending, descending }) => {
                   <br />
                   <ArrowDropDownIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textAscending("pl_name");
+                    }}
                   />
                   <ArrowDropUpIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textDescending("pl_name");
+                    }}
                   />
                 </th>
                 <th>
@@ -44,9 +45,15 @@ const TablePage = ({ array, ascending, descending }) => {
                   <br />
                   <ArrowDropDownIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textAscending("hostname");
+                    }}
                   />
                   <ArrowDropUpIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textDescending("hostname");
+                    }}
                   />
                 </th>
                 <th>
@@ -54,9 +61,15 @@ const TablePage = ({ array, ascending, descending }) => {
                   <br />
                   <ArrowDropDownIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textAscending("discoverymethod");
+                    }}
                   />
                   <ArrowDropUpIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textDescending("discoverymethod");
+                    }}
                   />
                 </th>
                 <th>
@@ -64,11 +77,15 @@ const TablePage = ({ array, ascending, descending }) => {
                   <br />
                   <ArrowDropDownIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
-                    onClick={sortDataDescending}
+                    onClick={() => {
+                      numAscending();
+                    }}
                   />
                   <ArrowDropUpIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
-                    onClick={sortDataAscending}
+                    onClick={() => {
+                      numDescending();
+                    }}
                   />
                 </th>
                 <th>
@@ -76,16 +93,24 @@ const TablePage = ({ array, ascending, descending }) => {
                   <br />
                   <ArrowDropDownIcon
                     style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textAscending("disc_facility");
+                    }}
                   />
-                  <ArrowDropUpIcon style={{ fontSize: "xx-large" }} />
+                  <ArrowDropUpIcon
+                    style={{ fontSize: "xx-large", cursor: "pointer" }}
+                    onClick={() => {
+                      textDescending("disc_facility");
+                    }}
+                  />
                 </th>
               </tr>
-              {jsonData.map((data, index) => {
+              {array.map((data, index) => {
                 return (
                   <>
                     <tr>
                       <th>
-                        <a href="">
+                        <a href="" target="_blank">
                           {data.pl_name}
                           <OpenInNewIcon style={{ fontSize: "small" }} />
                         </a>
@@ -104,7 +129,24 @@ const TablePage = ({ array, ascending, descending }) => {
       </>
     );
   } else {
-    return <h1>data is not</h1>;
+    return (
+      <>
+        <div className="tempLineOutterBody">
+          <div className="tempLineInnerBady">
+            <div className="tempLineText">
+              <p>Exoplanets are planets outside the Solar System.</p>
+              <p>
+                Here you can query{" "}
+                <a href="#" target="_blank" style={{ textDecoration: "none" }}>
+                  NASA's Exoplanet Archive
+                </a>{" "}
+                and find the one you love the most.
+              </p>
+            </div>
+          </div>
+        </div>
+      </>
+    );
   }
 };
 
