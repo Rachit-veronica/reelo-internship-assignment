@@ -20,6 +20,7 @@
     @media (max-width: "860px") {
       padding: 10% 0% 0% 0%;
     }
+
     h1 {
       font-family: "Bricolage Grotesque", sans-serif;
       font-family: "DM Sans", sans-serif;
@@ -31,6 +32,10 @@
       height: 550px;
       background-color: white;
       overflow-y: auto;
+      @media (max-width: 500px) {
+        margin-top: 10%;
+        height: 650px;
+      }
       .filterBar {
         padding: 2% 1% 2% 1%;
         display: flex;

@@ -55,7 +55,6 @@ function LandingPage() {
         );
       });
       setPassJsonValues(filterResults);
-      
     } else {
       alert("Please Fill The filter Bar Data");
     }
